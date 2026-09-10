@@ -1,0 +1,64 @@
+# Planora Project Documentation
+
+**Project:** Planora  
+**Company:** Planora Technologies  
+**Version:** 1.0  
+**Date:** September 10, 2026  
+**Prepared by:** Sehrish Sindhu
+
+# 1. Existing Software Landscape
+
+Several event-planning applications already exist, including Eventbrite, Partiful, and The Knot.
+
+Eventbrite focuses mainly on creating events, selling tickets, registration, and managing attendees.
+
+Partiful allows users to create events, send invitations, communicate with guests, and track RSVPs.
+
+The Knot provides planning tools for weddings, including budgeting, guest lists, vendors, checklists, and RSVPs.
+
+Planora will be different because it will bring several event-planning tools together while supporting many different types of events instead of focusing mainly on ticketed events, invitations, or weddings.
+
+# 2. Vision and Scope
+
+## Company Overview
+
+Planora Technologies is a fictional software company focused on creating simple tools that make planning and organization easier.
+
+## Project Background
+
+Planora Technologies identified that people often use multiple apps, spreadsheets, notes, and group chats when planning an event. The company decided to develop Planora to provide users with one organized place to manage the entire event-planning process.
+
+## Project Vision
+
+The vision of Planora is to create an easy-to-use application that helps users plan and manage events from beginning to end.
+
+## Initial Project Scope
+
+Planora is expected to include:
+
+- Event creation
+- Budget management
+- Expense tracking
+- Guest lists
+- Invitations
+- RSVP tracking
+- Vendor management
+- Planning checklists
+- Schedules and deadlines
+- Event reminders
+- Notes
+- Collaboration with other users
+
+# 3. Target Users
+
+Planora will be designed for people planning weddings, birthdays, graduation parties, baby showers, corporate events, family gatherings, and other social events.
+
+# 4. Project Goal
+
+The goal of Planora is to help users save time, stay organized, manage their budgets, meet important deadlines, and reduce the stress involved with planning an event.
+
+# 5. Version History
+
+| Version | Date | Description |
+|---------|------|-------------|
+| 1.0 | September 10, 2026 | Initial research, vision, scope, company background, target users, and project goals. |
