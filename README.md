@@ -10,4 +10,4 @@ The purpose of Planora is to bring the most important parts of event planning in
 
 ## Current Version
 
-Version 1.0 - Week 1
+Version 2.0 – Week 2
