@@ -1,0 +1,239 @@
+# Planora Project Documentation
+
+**Project:** Planora
+**Company:** Planora Technologies
+**Version:** 3.0
+**Date:** September 24, 2026
+**Prepared by:** Sehrish Sindhu
+
+# Week 3 – Application Design and User Flow
+
+## 1. Week 3 Project Goal
+
+The goal for Week 3 is to continue developing Planora by planning the application's main screens, navigation, and user flow.
+
+Week 1 established the overall idea and purpose of Planora. Week 2 identified user needs, software requirements, user stories, and feature priorities. Week 3 focuses on how users will interact with these features inside the application.
+
+The goal is to make Planora simple and organized so users can easily move between different parts of their event.
+
+## 2. Main Application Screens
+
+Planora will include several main screens that allow users to manage different parts of their event.
+
+### Dashboard
+
+The Dashboard will serve as the main home screen after a user opens an event.
+
+The Dashboard will provide a quick overview of:
+
+* Event name
+* Event date
+* Days remaining until the event
+* Current budget
+* Amount spent
+* Remaining budget
+* Number of guests
+* RSVP status
+* Upcoming tasks
+* Upcoming deadlines
+
+The Dashboard will allow users to quickly understand the current status of their event.
+
+### Create Event
+
+The Create Event screen will allow users to start planning a new event.
+
+Users will enter:
+
+* Event name
+* Event type
+* Date
+* Time
+* Location
+* Estimated budget
+* Estimated number of guests
+
+After creating the event, the user will be taken to the event Dashboard.
+
+### Budget and Expenses
+
+The Budget section will help users manage event spending.
+
+Users will be able to:
+
+* Set an overall budget.
+* Add expenses.
+* Create expense categories.
+* View the amount spent.
+* View the remaining budget.
+* Edit or remove expenses.
+
+Possible expense categories could include venue, food, decorations, entertainment, photography, transportation, and other expenses.
+
+### Guest List and RSVPs
+
+The Guest section will allow users to manage the people invited to their event.
+
+Users will be able to:
+
+* Add guests.
+* Edit guest information.
+* Remove guests.
+* Track invitations.
+* Record RSVP responses.
+* View the total number of attending guests.
+
+RSVP statuses may include:
+
+* Attending
+* Not Attending
+* Pending
+
+### Planning Checklist
+
+The Checklist section will help users keep track of tasks that must be completed before the event.
+
+Users will be able to:
+
+* Create tasks.
+* Set deadlines.
+* Mark tasks as completed.
+* Edit tasks.
+* Delete tasks.
+* View upcoming tasks.
+
+Examples could include booking a venue, ordering decorations, confirming vendors, sending invitations, and making final payments.
+
+### Vendor Management
+
+The Vendor section will keep important vendor information organized.
+
+Users will be able to save:
+
+* Vendor name
+* Vendor category
+* Contact information
+* Service provided
+* Estimated cost
+* Final cost
+* Payment status
+* Notes
+
+### Event Schedule
+
+The Schedule section will allow users to organize activities for the event day.
+
+Users will be able to add:
+
+* Activity name
+* Start time
+* End time
+* Location
+* Notes
+
+This will help users create a timeline for the event.
+
+## 3. Main Navigation
+
+Planora's main navigation will be designed to give users quick access to the most important features.
+
+The main navigation could include:
+
+**Dashboard | Budget | Guests | Checklist | Vendors | Schedule**
+
+Additional features such as settings, notes, collaboration, and account management can be accessed through a secondary menu.
+
+Keeping the main navigation simple will prevent the application from becoming confusing as additional features are added.
+
+## 4. Basic User Flow
+
+A new user's basic Planora experience will follow this process:
+
+**Open Planora → Create Account/Login → Create Event → Enter Event Details → Open Dashboard → Begin Planning**
+
+From the Dashboard, the user can choose which part of the event they want to manage.
+
+For example:
+
+**Dashboard → Budget → Add Expense → Save Expense → Updated Budget**
+
+Another example is:
+
+**Dashboard → Guests → Add Guest → Select RSVP Status → Save Guest**
+
+For tasks:
+
+**Dashboard → Checklist → Add Task → Set Deadline → Save Task → Mark Complete**
+
+These user flows are designed to keep common actions simple and require as few unnecessary steps as possible.
+
+## 5. Dashboard Layout Concept
+
+The Planora Dashboard could be organized into several sections.
+
+At the top of the screen, users will see the event name, date, and countdown.
+
+Below that, summary cards could display:
+
+* Budget Remaining
+* Guests Attending
+* Tasks Remaining
+* Days Until Event
+
+The lower section of the Dashboard could display upcoming deadlines and recent activity.
+
+This design would allow users to see the most important information about their event without opening every section individually.
+
+## 6. Design Goals
+
+The Planora interface should follow several design goals.
+
+### Simple
+
+Users should be able to understand the application without needing extensive instructions.
+
+### Organized
+
+Information should be divided into clear sections instead of displaying too much information on one screen.
+
+### Consistent
+
+Buttons, menus, headings, and navigation should have a consistent appearance throughout the application.
+
+### Efficient
+
+Common actions such as adding an expense, guest, or task should require only a few steps.
+
+### Flexible
+
+The design should work for different types of events instead of being designed only for weddings or large events.
+
+## 7. Improvements from Week 2
+
+Version 2.0 identified what Planora needed to do through functional requirements, non-functional requirements, and user stories.
+
+Version 3.0 begins transforming those requirements into an actual application structure.
+
+The major improvement this week is defining the main screens and determining how users will navigate between Planora's features.
+
+This creates a foundation for developing an interface and functional prototype in future versions.
+
+## 8. Next Steps
+
+The next stage of Planora development will begin turning the planned application structure into a prototype.
+
+Future development may include:
+
+* Creating visual mockups.
+* Designing the Planora Dashboard.
+* Creating forms for events, guests, expenses, and tasks.
+* Developing the first working features.
+* Testing navigation between screens.
+
+## 9. Version History
+
+| Version | Date               | Description                                                                                                 |
+| ------- | ------------------ | ----------------------------------------------------------------------------------------------------------- |
+| 1.0     | September 10, 2026 | Initial research, vision, scope, company background, target users, and project goals.                       |
+| 2.0     | September 17, 2026 | Added user needs, requirements, user stories, feature priorities, and development planning.                 |
+| 3.0     | September 24, 2026 | Added application screens, navigation structure, user flows, dashboard concept, and interface design goals. |
