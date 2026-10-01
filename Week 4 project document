@@ -1,0 +1,273 @@
+# Planora Project Documentation
+
+**Project:** Planora
+**Company:** Planora Technologies
+**Version:** 4.0
+**Date:** October 1, 2026
+**Prepared by:** Sehrish Sindhu
+
+# Week 4 – System and Data Design
+
+## 1. Week 4 Project Goal
+
+The goal for Week 4 is to continue developing Planora by determining how the application's information will be organized and stored.
+
+Week 3 focused on the visual design of Planora, including its main screens, navigation, dashboard, and user flow. Version 4.0 moves behind the interface and begins planning the structure needed to support those features.
+
+## 2. Main Data Categories
+
+Planora will need to store several types of information.
+
+### User Information
+
+Each user account may include:
+
+* User ID
+* Name
+* Email
+* Password
+* Account creation date
+
+### Event Information
+
+Each event may include:
+
+* Event ID
+* Event name
+* Event type
+* Date
+* Time
+* Location
+* Estimated budget
+* Number of guests
+* Event description
+
+### Budget and Expenses
+
+Budget information may include:
+
+* Total event budget
+* Amount spent
+* Remaining budget
+
+Each expense may include:
+
+* Expense ID
+* Category
+* Description
+* Amount
+* Date
+* Payment status
+
+### Guest Information
+
+Each guest may include:
+
+* Guest ID
+* Name
+* Contact information
+* Group or relationship
+* Invitation status
+* RSVP status
+
+RSVP statuses may include:
+
+* Attending
+* Not Attending
+* Pending
+
+### Tasks
+
+Each planning task may include:
+
+* Task ID
+* Task name
+* Description
+* Deadline
+* Priority
+* Completion status
+
+Priority levels may include high, medium, and low.
+
+### Vendor Information
+
+Each vendor may include:
+
+* Vendor ID
+* Vendor name
+* Vendor category
+* Contact information
+* Service
+* Estimated cost
+* Final cost
+* Payment status
+* Notes
+
+### Event Schedule
+
+Each schedule item may include:
+
+* Schedule ID
+* Activity name
+* Start time
+* End time
+* Location
+* Notes
+
+## 3. Relationships Between Information
+
+The information stored in Planora will be connected.
+
+A **user** can create one or more **events**.
+
+Each **event** can have multiple:
+
+* Guests
+* Expenses
+* Tasks
+* Vendors
+* Schedule activities
+
+For example:
+
+**User → Event → Guests**
+
+**User → Event → Expenses**
+
+**User → Event → Tasks**
+
+**User → Event → Vendors**
+
+**User → Event → Schedule**
+
+This structure allows each event to keep its information separate while still being connected to the user's account.
+
+## 4. Basic System Structure
+
+Planora can be divided into three main parts.
+
+### User Interface
+
+The user interface is what users see and interact with.
+
+This includes:
+
+* Dashboard
+* Budget
+* Guest List
+* Checklist
+* Vendors
+* Schedule
+
+### Application Logic
+
+The application logic controls what happens when users perform actions.
+
+For example, when a user adds a $200 expense, Planora should save the expense and automatically update the remaining event budget.
+
+### Data Storage
+
+The data storage system will save information such as:
+
+* User accounts
+* Events
+* Expenses
+* Guests
+* Tasks
+* Vendors
+* Schedules
+
+Together, these three parts allow information entered by the user to be processed, saved, and displayed throughout Planora.
+
+## 5. Example: Adding an Expense
+
+One example of how the Planora system would work is adding an event expense.
+
+**Step 1:** The user opens an event.
+
+**Step 2:** The user selects Budget.
+
+**Step 3:** The user selects Add Expense.
+
+**Step 4:** The user enters the expense category, description, amount, and date.
+
+**Step 5:** Planora saves the expense.
+
+**Step 6:** The application recalculates the remaining budget.
+
+**Step 7:** The Dashboard displays the updated budget information.
+
+This demonstrates how the user interface, application logic, and stored data work together.
+
+## 6. Example: Adding a Guest
+
+The guest-management system would follow a similar process.
+
+**Step 1:** The user opens the Guest List.
+
+**Step 2:** The user selects Add Guest.
+
+**Step 3:** The user enters the guest's information.
+
+**Step 4:** Planora saves the guest under the selected event.
+
+**Step 5:** The guest appears on the Guest List.
+
+**Step 6:** When the RSVP status changes, Planora updates the total number of attending, declined, and pending guests.
+
+## 7. Data Design Goals
+
+Planora's data structure should be:
+
+### Organized
+
+Information should be divided into logical categories so that it is easy to manage.
+
+### Accurate
+
+Changes to expenses, guests, tasks, and other information should update the correct event.
+
+### Secure
+
+Personal information and event information should only be available to authorized users.
+
+### Flexible
+
+The structure should support different event types and allow additional features to be added later.
+
+### Reliable
+
+Users should be able to save information and access it again without losing their planning progress.
+
+## 8. Improvements from Week 3
+
+Version 3.0 focused on what Planora would look like and how users would navigate through the application.
+
+Version 4.0 expands the project by defining the information behind those screens.
+
+The project now identifies the major types of data Planora will need, how the information connects, and how user actions can update information throughout the application.
+
+This moves Planora closer to becoming a functional application instead of only a visual concept.
+
+## 9. Next Steps
+
+The next stage of Planora will begin using the system and data designs to develop more functional parts of the application.
+
+Future development may include:
+
+* Creating working event forms.
+* Adding sample event data.
+* Developing budget calculations.
+* Creating guest-management functions.
+* Creating task-management functions.
+* Connecting application screens.
+* Testing basic user interactions.
+
+## 10. Version History
+
+| Version | Date               | Description                                                                                              |
+| ------- | ------------------ | -------------------------------------------------------------------------------------------------------- |
+| 1.0     | September 10, 2026 | Initial research, vision, scope, company background, target users, and project goals.                    |
+| 2.0     | September 17, 2026 | Added user needs, requirements, user stories, feature priorities, and development planning.              |
+| 3.0     | September 24, 2026 | Added application screens, navigation structure, user flows, dashboard concept, and UI/UX mockup.        |
+| 4.0     | October 1, 2026    | Added system structure, data categories, data relationships, processing examples, and data design goals. |
