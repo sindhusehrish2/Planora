@@ -1,0 +1,88 @@
+# Planora Project Documentation
+
+**Project:** Planora  
+**Company:** Planora Technologies  
+**Version:** 5.0  
+**Date:** October 8, 2026  
+**Prepared by:** Sehrish Sindhu
+
+# Week 5 – Prototype Development and Core Features
+
+## 1. Week 5 Project Goal
+
+The goal for Week 5 is to begin turning Planora's design into a functional application prototype.
+
+During the previous four weeks, I developed the project idea, identified user needs, designed the application screens, and planned how information would be stored.
+
+For Version 5.0, I will focus on developing the first core features and determining how users will interact with them.
+
+## 2. Initial Prototype
+
+The first Planora prototype will focus on three main features:
+
+- Event creation
+- Budget and expense tracking
+- Planning checklist
+
+These features were selected because they represent some of the most important parts of organizing an event.
+
+The prototype will allow me to test how these features work before adding more advanced tools.
+
+## 3. Event Creation Feature
+
+The event creation feature will allow users to start planning a new event.
+
+Users will be able to enter:
+
+- Event name
+- Event type
+- Date and time
+- Location
+- Estimated budget
+- Estimated guest count
+
+After the information is entered, Planora should create an event and display its details on the dashboard.
+
+## 4. Budget and Expense Tracking
+
+The budget feature will help users manage event spending.
+
+Users should be able to:
+
+- Enter their total event budget.
+- Add individual expenses.
+- Categorize expenses.
+- View total spending.
+- View their remaining budget.
+- Edit or remove expenses.
+
+For example, if a user has a $3,000 budget and records $1,200 in expenses, Planora should calculate a remaining budget of $1,800.
+
+**Remaining Budget = Total Budget − Total Expenses**
+
+This calculation will eventually update automatically whenever an expense is added or removed.
+
+## 5. Planning Checklist
+
+The checklist feature will allow users to organize important tasks.
+
+Users should be able to:
+
+- Create a task.
+- Enter a task description.
+- Assign a deadline.
+- Select a priority level.
+- Mark a task as completed.
+- Delete a task.
+
+Example tasks include booking a venue, ordering decorations, contacting vendors, and sending invitations.
+
+## 6. Prototype User Flow
+
+The initial prototype will follow a simple process.
+
+**Step 1:** Open Planora.
+
+**Step 2:** Create a new event.
+
+**Step 3:** Enter the event information
