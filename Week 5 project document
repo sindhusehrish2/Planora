@@ -85,4 +85,70 @@ The initial prototype will follow a simple process.
 
 **Step 2:** Create a new event.
 
-**Step 3:** Enter the event information
+**Step 3:** Enter the event information.
+
+**Step 4:** Open the event dashboard.
+
+**Step 5:** Choose Budget or Checklist.
+
+**Step 6:** Add or update information.
+
+**Step 7:** View the updated event information.
+
+This process is designed to keep the application simple and easy to navigate.
+
+## 7. Prototype Development Approach
+
+The first prototype will use a simple interface with clearly labeled buttons, forms, and navigation.
+
+Development will focus on making the most important features work before adding more complex functions.
+
+The prototype may initially use sample data to demonstrate how the application is expected to operate.
+
+Later versions will focus on saving information, connecting additional features, and improving the overall user experience.
+
+## 8. Initial Testing Plan
+
+Once the prototype is created, the following functions will need to be tested:
+
+| Feature | Expected Result |
+|---|---|
+| Create Event | Event details appear on the dashboard |
+| Add Expense | Expense appears in the expense list |
+| Budget Calculation | Remaining budget updates correctly |
+| Add Task | New task appears on the checklist |
+| Complete Task | Task status changes to completed |
+| Delete Task | Task is removed from the checklist |
+
+These tests will help identify problems before additional features are developed.
+
+## 9. Improvements from Week 4
+
+Week 4 focused on Planora's system structure, data categories, and relationships.
+
+Week 5 builds on that foundation by defining the first features that will be developed into a working prototype.
+
+The main improvement is moving from planning the application to preparing its core functions for implementation.
+
+## 10. Next Steps
+
+For Week 6, the project will focus on expanding the prototype and improving its functionality.
+
+Planned improvements include:
+
+- Developing guest-list management.
+- Adding RSVP tracking.
+- Improving the dashboard.
+- Connecting the main application features.
+- Testing the prototype.
+- Improving the interface based on testing results.
+
+## 11. Version History
+
+| Version | Date | Description |
+|---|---|---|
+| 1.0 | September 10, 2026 | Initial project research, vision, scope, and goals. |
+| 2.0 | September 17, 2026 | Added software requirements, user stories, and feature priorities. |
+| 3.0 | September 24, 2026 | Designed application screens, navigation, and UI mockups. |
+| 4.0 | October 1, 2026 | Added system architecture, database design, and data relationships. |
+| 5.0 | October 8, 2026 | Defined the initial prototype, core functionality, user flows, and testing plan. |
