@@ -1,0 +1,980 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Planora | Event Planning</title>
+
+<style>
+:root {
+  --pink:#bd6688;
+  --light:#fff0f5;
+  --dark:#542c40;
+  --border:#efd9e2;
+}
+
+* { box-sizing:border-box; }
+
+body {
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#fff8fb;
+  color:var(--dark);
+}
+
+header {
+  background:white;
+  padding:20px 6%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-bottom:1px solid var(--border);
+}
+
+.logo {
+  font-family:Georgia,serif;
+  font-size:32px;
+  font-style:italic;
+  color:#9d3d63;
+}
+
+button {
+  background:var(--pink);
+  color:white;
+  border:0;
+  padding:11px 18px;
+  border-radius:9px;
+  cursor:pointer;
+}
+
+button:hover { opacity:.85; }
+
+nav {
+  display:flex;
+  gap:10px;
+  padding:20px 6%;
+  flex-wrap:wrap;
+}
+
+nav button {
+  background:#f4dce6;
+  color:var(--dark);
+}
+
+nav button.active {
+  background:var(--pink);
+  color:white;
+}
+
+main {
+  max-width:1100px;
+  margin:auto;
+  padding:10px 24px 60px;
+}
+
+h1 {
+  font-family:Georgia,serif;
+  font-size:34px;
+}
+
+.subtitle { color:#8b7080; }
+
+.hero {
+  background:linear-gradient(120deg,#f8dce7,#fff1f5);
+  padding:28px;
+  border-radius:18px;
+  margin:20px 0;
+}
+
+.grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:16px;
+}
+
+.card {
+  background:white;
+  padding:22px;
+  border:1px solid var(--border);
+  border-radius:15px;
+  box-shadow:0 4px 16px #9e607012;
+}
+
+.card small { color:#937786; }
+
+.card h2 {
+  font-size:26px;
+  margin-bottom:0;
+}
+
+.panel {
+  background:white;
+  padding:25px;
+  border-radius:16px;
+  border:1px solid var(--border);
+  margin-top:22px;
+}
+
+label {
+  display:block;
+  margin:15px 0;
+  font-weight:bold;
+}
+
+input,select {
+  display:block;
+  width:100%;
+  margin-top:7px;
+  padding:12px;
+  border:1px solid #e5c9d5;
+  border-radius:8px;
+  font:inherit;
+}
+
+table {
+  width:100%;
+  border-collapse:collapse;
+}
+
+th,td {
+  padding:13px;
+  text-align:left;
+  border-bottom:1px solid var(--border);
+}
+
+.table-wrap { overflow-x:auto; }
+
+.delete {
+  background:#fae1e7;
+  color:#a3385c;
+}
+
+.task {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  padding:14px 0;
+  border-bottom:1px solid var(--border);
+}
+
+.task label {
+  margin:0;
+  font-weight:normal;
+}
+
+.task input {
+  display:inline;
+  width:auto;
+  margin-right:10px;
+}
+
+.completed {
+  text-decoration:line-through;
+  color:#aaa;
+}
+
+.hidden { display:none; }
+
+.progress {
+  background:#f5e4ea;
+  height:12px;
+  border-radius:20px;
+  overflow:hidden;
+  margin-top:15px;
+}
+
+.progress div {
+  height:100%;
+  background:var(--pink);
+  width:0;
+}
+
+.status {
+  border-radius:20px;
+  padding:5px 10px;
+  font-size:12px;
+  font-weight:bold;
+  display:inline-block;
+}
+
+.confirmed {
+  background:#e1f5e8;
+  color:#287548;
+}
+
+.declined {
+  background:#fde4e7;
+  color:#a63e52;
+}
+
+.pending {
+  background:#fff0d5;
+  color:#98651d;
+}
+
+footer {
+  text-align:center;
+  padding:30px;
+  color:#977e89;
+}
+
+@media(max-width:600px) {
+  header {
+    flex-direction:column;
+    gap:15px;
+  }
+  h1 { font-size:28px; }
+  .panel { padding:16px; }
+  .task { align-items:flex-start; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">♥ Planora</div>
+  <button onclick="showPage('event')">
+    + Create / Edit Event
+  </button>
+</header>
+
+<nav>
+  <button onclick="showPage('dashboard')" class="active">
+    Dashboard
+  </button>
+  <button onclick="showPage('event')">
+    Event Details
+  </button>
+  <button onclick="showPage('budget')">
+    Budget & Expenses
+  </button>
+  <button onclick="showPage('checklist')">
+    Planning Checklist
+  </button>
+  <button onclick="showPage('guests')">
+    Guest List & RSVPs
+  </button>
+</nav>
+
+<main>
+
+<!-- DASHBOARD -->
+<section id="dashboard">
+  <h1>Your Planning Dashboard ✨</h1>
+  <p class="subtitle">
+    Plan events. Stay organized. Make memories.
+  </p>
+
+  <div class="hero">
+    <h2 id="eventTitle">Your Next Celebration</h2>
+    <p id="eventDetails">
+      Create an event to get started!
+    </p>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <small>EVENT BUDGET</small>
+      <h2 id="totalBudget">$0</h2>
+    </div>
+    <div class="card">
+      <small>TOTAL SPENT</small>
+      <h2 id="totalSpent">$0</h2>
+    </div>
+    <div class="card">
+      <small>REMAINING BUDGET</small>
+      <h2 id="remaining">$0</h2>
+    </div>
+    <div class="card">
+      <small>TASKS COMPLETED</small>
+      <h2 id="taskProgress">0 / 0</h2>
+    </div>
+    <div class="card">
+      <small>TOTAL GUESTS</small>
+      <h2 id="totalGuests">0</h2>
+    </div>
+    <div class="card">
+      <small>CONFIRMED GUESTS</small>
+      <h2 id="confirmedGuests">0</h2>
+    </div>
+    <div class="card">
+      <small>PENDING RSVPs</small>
+      <h2 id="pendingGuests">0</h2>
+    </div>
+    <div class="card">
+      <small>DECLINED INVITATIONS</small>
+      <h2 id="declinedGuests">0</h2>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h3>Budget Progress</h3>
+    <div class="progress">
+      <div id="budgetBar"></div>
+    </div>
+    <p id="budgetText">No budget set yet.</p>
+  </div>
+
+  <div class="panel">
+    <h3>Guest RSVP Progress</h3>
+    <div class="progress">
+      <div id="rsvpBar"></div>
+    </div>
+    <p id="rsvpText">No guests added yet.</p>
+  </div>
+</section>
+
+<!-- EVENT CREATION -->
+<section id="event" class="hidden">
+  <h1>Create Your Event</h1>
+  <p class="subtitle">
+    Every great celebration starts with a plan.
+  </p>
+
+  <div class="panel">
+    <form id="eventForm">
+
+      <label>Event Name
+        <input id="name" required
+          placeholder="e.g. Graduation Party">
+      </label>
+
+      <label>Event Type
+        <select id="type">
+          <option>Birthday</option>
+          <option>Wedding</option>
+          <option>Graduation</option>
+          <option>Baby Shower</option>
+          <option>Corporate Event</option>
+          <option>Other</option>
+        </select>
+      </label>
+
+      <label>Event Date
+        <input id="date" type="date" required>
+      </label>
+
+      <label>Location
+        <input id="location"
+          placeholder="Houston, TX">
+      </label>
+
+      <label>Total Budget ($)
+        <input id="budgetAmount" type="number"
+          min="0" step="0.01" required>
+      </label>
+
+      <button type="submit">Save Event</button>
+    </form>
+  </div>
+</section>
+
+<!-- BUDGET -->
+<section id="budget" class="hidden">
+  <h1>Budget & Expenses</h1>
+  <p class="subtitle">
+    Keep your celebration on budget.
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <small>BUDGET</small>
+      <h2 id="bBudget">$0</h2>
+    </div>
+    <div class="card">
+      <small>SPENT</small>
+      <h2 id="bSpent">$0</h2>
+    </div>
+    <div class="card">
+      <small>REMAINING</small>
+      <h2 id="bRemaining">$0</h2>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h3>Add an Expense</h3>
+    <form id="expenseForm">
+
+      <label>Description
+        <input id="expenseName" required
+          placeholder="e.g. Flowers">
+      </label>
+
+      <label>Category
+        <select id="category">
+          <option>Venue</option>
+          <option>Food & Drinks</option>
+          <option>Decorations</option>
+          <option>Photography</option>
+          <option>Entertainment</option>
+          <option>Other</option>
+        </select>
+      </label>
+
+      <label>Amount ($)
+        <input id="expenseAmount" type="number"
+          min="0.01" step="0.01" required>
+      </label>
+
+      <button type="submit">+ Add Expense</button>
+    </form>
+  </div>
+
+  <div class="panel">
+    <h3>Expense History</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Expense</th>
+            <th>Category</th>
+            <th>Amount</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="expenseList"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- CHECKLIST -->
+<section id="checklist" class="hidden">
+  <h1>Planning Checklist</h1>
+  <p class="subtitle">
+    Little steps make beautiful celebrations.
+  </p>
+
+  <div class="panel">
+    <h3>Add a Task</h3>
+    <form id="taskForm">
+
+      <label>Task Name
+        <input id="taskName" required
+          placeholder="e.g. Book venue">
+      </label>
+
+      <label>Deadline
+        <input id="taskDate" type="date">
+      </label>
+
+      <label>Priority
+        <select id="priority">
+          <option>High</option>
+          <option>Medium</option>
+          <option>Low</option>
+        </select>
+      </label>
+
+      <button type="submit">+ Add Task</button>
+    </form>
+  </div>
+
+  <div class="panel">
+    <h3>Your Tasks</h3>
+    <div id="taskList"></div>
+  </div>
+</section>
+
+<!-- WEEK 6: GUEST MANAGEMENT -->
+<section id="guests" class="hidden">
+  <h1>Guest List & RSVP Tracking 💌</h1>
+  <p class="subtitle">
+    Keep every guest organized in one place.
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <small>TOTAL INVITED</small>
+      <h2 id="gTotal">0</h2>
+    </div>
+    <div class="card">
+      <small>CONFIRMED</small>
+      <h2 id="gConfirmed">0</h2>
+    </div>
+    <div class="card">
+      <small>PENDING</small>
+      <h2 id="gPending">0</h2>
+    </div>
+    <div class="card">
+      <small>DECLINED</small>
+      <h2 id="gDeclined">0</h2>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h3>Add a Guest</h3>
+
+    <form id="guestForm">
+
+      <label>Guest Name
+        <input id="guestName" required
+          placeholder="e.g. Sarah Johnson">
+      </label>
+
+      <label>Email or Phone Number
+        <input id="guestContact"
+          placeholder="e.g. sarah@email.com">
+      </label>
+
+      <label>Guest Group
+        <select id="guestGroup">
+          <option>Family</option>
+          <option>Friends</option>
+          <option>Coworkers</option>
+          <option>Other</option>
+        </select>
+      </label>
+
+      <label>RSVP Status
+        <select id="guestStatus">
+          <option value="Pending">Pending</option>
+          <option value="Confirmed">Confirmed</option>
+          <option value="Declined">Declined</option>
+        </select>
+      </label>
+
+      <button type="submit">+ Add Guest</button>
+    </form>
+  </div>
+
+  <div class="panel">
+    <h3>Your Guest List</h3>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Guest</th>
+            <th>Contact</th>
+            <th>Group</th>
+            <th>RSVP Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="guestList"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  Made with ♥ by Planora Technologies | Version 6.0
+</footer>
+
+<script>
+const STORAGE_KEY = "planora-week5";
+
+let data = {
+  event:null,
+  expenses:[],
+  tasks:[],
+  guests:[]
+};
+
+// Load saved Week 5 information and new Week 6 guests.
+try {
+  const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
+  if(saved && typeof saved === "object") {
+    data = {
+      event:saved.event || null,
+      expenses:Array.isArray(saved.expenses)
+        ? saved.expenses : [],
+      tasks:Array.isArray(saved.tasks)
+        ? saved.tasks : [],
+      guests:Array.isArray(saved.guests)
+        ? saved.guests : []
+    };
+  }
+} catch(error) {
+  console.warn("Could not load saved data",error);
+}
+
+const money = value => new Intl.NumberFormat("en-US",{
+  style:"currency",
+  currency:"USD"
+}).format(value);
+
+function save() {
+  try {
+    localStorage.setItem(STORAGE_KEY,JSON.stringify(data));
+  } catch(error) {
+    alert("Unable to save. Check browser storage settings.");
+  }
+}
+
+function newId() {
+  if(window.crypto && crypto.randomUUID) {
+    return crypto.randomUUID();
+  }
+  return Date.now().toString() +
+    Math.random().toString(36).slice(2);
+}
+
+function showPage(page) {
+  ["dashboard","event","budget","checklist","guests"]
+    .forEach(id=>{
+      document.getElementById(id).classList.toggle(
+        "hidden",id!==page
+      );
+    });
+
+  document.querySelectorAll("nav button").forEach(button=>{
+    button.classList.toggle(
+      "active",
+      button.getAttribute("onclick").includes(
+        "'" + page + "'"
+      )
+    );
+  });
+
+  render();
+}
+
+// Save event.
+document.getElementById("eventForm")
+  .addEventListener("submit",e=>{
+    e.preventDefault();
+
+    data.event = {
+      name:document.getElementById("name").value.trim(),
+      type:document.getElementById("type").value,
+      date:document.getElementById("date").value,
+      location:document.getElementById("location").value.trim(),
+      budget:Number(
+        document.getElementById("budgetAmount").value
+      )
+    };
+
+    save();
+    showPage("dashboard");
+  });
+
+// Add expense.
+document.getElementById("expenseForm")
+  .addEventListener("submit",e=>{
+    e.preventDefault();
+
+    if(!data.event) {
+      alert("Please create an event first.");
+      showPage("event");
+      return;
+    }
+
+    data.expenses.push({
+      id:newId(),
+      name:document.getElementById("expenseName").value.trim(),
+      category:document.getElementById("category").value,
+      amount:Number(
+        document.getElementById("expenseAmount").value
+      )
+    });
+
+    save();
+    e.target.reset();
+    render();
+  });
+
+// Add checklist task.
+document.getElementById("taskForm")
+  .addEventListener("submit",e=>{
+    e.preventDefault();
+
+    if(!data.event) {
+      alert("Please create an event first.");
+      showPage("event");
+      return;
+    }
+
+    data.tasks.push({
+      id:newId(),
+      name:document.getElementById("taskName").value.trim(),
+      date:document.getElementById("taskDate").value,
+      priority:document.getElementById("priority").value,
+      done:false
+    });
+
+    save();
+    e.target.reset();
+    render();
+  });
+
+// Week 6: Add guest.
+document.getElementById("guestForm")
+  .addEventListener("submit",e=>{
+    e.preventDefault();
+
+    if(!data.event) {
+      alert("Please create an event first.");
+      showPage("event");
+      return;
+    }
+
+    data.guests.push({
+      id:newId(),
+      name:document.getElementById("guestName").value.trim(),
+      contact:document.getElementById("guestContact").value.trim(),
+      group:document.getElementById("guestGroup").value,
+      status:document.getElementById("guestStatus").value
+    });
+
+    save();
+    e.target.reset();
+    render();
+  });
+
+function deleteExpense(id) {
+  data.expenses=data.expenses.filter(x=>x.id!==id);
+  save();
+  render();
+}
+
+function deleteTask(id) {
+  data.tasks=data.tasks.filter(x=>x.id!==id);
+  save();
+  render();
+}
+
+function toggleTask(id) {
+  const task=data.tasks.find(x=>x.id===id);
+  if(task) task.done=!task.done;
+  save();
+  render();
+}
+
+function deleteGuest(id) {
+  data.guests=data.guests.filter(x=>x.id!==id);
+  save();
+  render();
+}
+
+function updateRSVP(id,status) {
+  const guest=data.guests.find(x=>x.id===id);
+  if(guest) guest.status=status;
+  save();
+  render();
+}
+
+function element(tag,text) {
+  const node=document.createElement(tag);
+  node.textContent=text;
+  return node;
+}
+
+// Update all screens.
+function render() {
+  const event=data.event;
+  const budget=event ? event.budget : 0;
+
+  const spent=data.expenses.reduce(
+    (sum,x)=>sum+x.amount,0
+  );
+
+  const remaining=budget-spent;
+
+  const completed=data.tasks.filter(x=>x.done).length;
+
+  const percent=budget>0
+    ? Math.round(spent/budget*100)
+    : 0;
+
+  const totalGuests=data.guests.length;
+
+  const confirmed=data.guests.filter(
+    x=>x.status==="Confirmed"
+  ).length;
+
+  const pending=data.guests.filter(
+    x=>x.status==="Pending"
+  ).length;
+
+  const declined=data.guests.filter(
+    x=>x.status==="Declined"
+  ).length;
+
+  const rsvpPercent=totalGuests>0
+    ? Math.round(confirmed/totalGuests*100)
+    : 0;
+
+  document.getElementById("eventTitle").textContent=
+    event ? event.name : "Your Next Celebration";
+
+  document.getElementById("eventDetails").textContent=
+    event
+      ? `${event.type} | ${event.date} | ${event.location}`
+      : "Create an event to get started!";
+
+  const values={
+    totalBudget:budget,
+    totalSpent:spent,
+    remaining:remaining,
+    bBudget:budget,
+    bSpent:spent,
+    bRemaining:remaining
+  };
+
+  Object.entries(values).forEach(([id,value])=>{
+    document.getElementById(id).textContent=money(value);
+  });
+
+  document.getElementById("taskProgress").textContent=
+    `${completed} / ${data.tasks.length}`;
+
+  document.getElementById("budgetBar").style.width=
+    Math.min(100,Math.max(0,percent))+"%";
+
+  document.getElementById("budgetText").textContent=
+    `${percent}% used | ${money(remaining)} remaining`;
+
+  // Guest statistics.
+  const guestStats={
+    totalGuests:totalGuests,
+    confirmedGuests:confirmed,
+    pendingGuests:pending,
+    declinedGuests:declined,
+    gTotal:totalGuests,
+    gConfirmed:confirmed,
+    gPending:pending,
+    gDeclined:declined
+  };
+
+  Object.entries(guestStats).forEach(([id,value])=>{
+    document.getElementById(id).textContent=value;
+  });
+
+  document.getElementById("rsvpBar").style.width=
+    rsvpPercent+"%";
+
+  document.getElementById("rsvpText").textContent=
+    totalGuests
+      ? `${confirmed} of ${totalGuests} guests confirmed (${rsvpPercent}%)`
+      : "No guests added yet.";
+
+  // Keep saved event information in the form.
+  if(event) {
+    document.getElementById("name").value=event.name;
+    document.getElementById("type").value=event.type;
+    document.getElementById("date").value=event.date;
+    document.getElementById("location").value=event.location;
+    document.getElementById("budgetAmount").value=event.budget;
+  }
+
+  // Render expenses.
+  const expenseList=document.getElementById("expenseList");
+  expenseList.replaceChildren();
+
+  data.expenses.forEach(expense=>{
+    const row=document.createElement("tr");
+
+    [
+      expense.name,
+      expense.category,
+      money(expense.amount)
+    ].forEach(value=>{
+      row.appendChild(element("td",value));
+    });
+
+    const cell=document.createElement("td");
+    const button=element("button","Delete");
+
+    button.className="delete";
+    button.onclick=()=>deleteExpense(expense.id);
+
+    cell.appendChild(button);
+    row.appendChild(cell);
+    expenseList.appendChild(row);
+  });
+
+  // Render checklist.
+  const taskList=document.getElementById("taskList");
+  taskList.replaceChildren();
+
+  data.tasks.forEach(task=>{
+    const row=document.createElement("div");
+    row.className="task";
+
+    const label=document.createElement("label");
+    const checkbox=document.createElement("input");
+
+    checkbox.type="checkbox";
+    checkbox.checked=task.done;
+    checkbox.onchange=()=>toggleTask(task.id);
+
+    label.appendChild(checkbox);
+
+    const name=element(
+      "span",
+      task.name+
+      ` (${task.priority}${task.date ? " | "+task.date : ""})`
+    );
+
+    if(task.done) name.className="completed";
+
+    label.appendChild(name);
+
+    const button=element("button","Delete");
+    button.className="delete";
+    button.onclick=()=>deleteTask(task.id);
+
+    row.append(label,button);
+    taskList.appendChild(row);
+  });
+
+  // Week 6: Render guest list.
+  const guestList=document.getElementById("guestList");
+  guestList.replaceChildren();
+
+  data.guests.forEach(guest=>{
+    const row=document.createElement("tr");
+
+    [
+      guest.name,
+      guest.contact || "Not provided",
+      guest.group
+    ].forEach(value=>{
+      row.appendChild(element("td",value));
+    });
+
+    // Editable RSVP dropdown.
+    const statusCell=document.createElement("td");
+    const statusSelect=document.createElement("select");
+
+    ["Pending","Confirmed","Declined"].forEach(status=>{
+      const option=document.createElement("option");
+      option.value=status;
+      option.textContent=status;
+      option.selected=guest.status===status;
+      statusSelect.appendChild(option);
+    });
+
+    statusSelect.onchange=()=>updateRSVP(
+      guest.id,statusSelect.value
+    );
+
+    statusCell.appendChild(statusSelect);
+    row.appendChild(statusCell);
+
+    // Delete guest.
+    const actionCell=document.createElement("td");
+    const deleteButton=element("button","Delete");
+
+    deleteButton.className="delete";
+    deleteButton.onclick=()=>deleteGuest(guest.id);
+
+    actionCell.appendChild(deleteButton);
+    row.appendChild(actionCell);
+
+    guestList.appendChild(row);
+  });
+}
+
+render();
+</script>
+
+</body>
+</html>
