@@ -1,0 +1,129 @@
+# Planora Project Documentation
+
+**Project:** Planora  
+**Company:** Planora Technologies  
+**Version:** 7.0  
+**Date:** October 29, 2026  
+**Prepared by:** Sehrish Sindhu
+
+# Week 7 – Vendor Management and Event Scheduling
+
+## 1. Week 7 Project Goal
+
+The goal for Week 7 is to improve Planora by adding vendor management and event scheduling features. These updates build on the interactive prototype developed in previous weeks and allow users to organize more aspects of their events in one application.
+
+## 2. New Feature: Vendor Management
+
+In Version 7.0, I added a vendor management section to help users organize the businesses and services needed for their events.
+
+Users can now:
+
+- Add vendors such as photographers, caterers, decorators, and florists.
+- Enter vendor names and contact information.
+- Organize vendors by service category.
+- Record estimated vendor costs.
+- Track vendor payment status.
+- Delete vendors when they are no longer needed.
+
+This feature makes it easier to manage event services without keeping separate lists or documents.
+
+## 3. New Feature: Event Scheduling
+
+Another improvement in Week 7 is the event scheduling feature. This allows users to create a timeline for their event and organize important activities.
+
+Users can:
+
+- Add scheduled activities.
+- Enter activity times.
+- Include locations and descriptions.
+- View activities in chronological order.
+- Remove activities when plans change.
+
+For example, someone planning a wedding could schedule the ceremony, dinner, speeches, and reception activities.
+
+This feature helps users stay organized and follow their event timeline.
+
+## 4. Dashboard Improvements
+
+The dashboard has been updated to display additional information related to vendors and scheduled activities.
+
+The dashboard now brings together information about:
+
+- Event details
+- Total budget and expenses
+- Remaining budget
+- Completed checklist tasks
+- Guest counts and RSVP responses
+- Vendor totals
+- Scheduled activities
+
+These improvements allow users to monitor their event planning progress from one central location.
+
+## 5. Features Maintained from Previous Weeks
+
+Version 7.0 continues to include the main features developed during Weeks 5 and 6.
+
+These include event creation, budget calculations, expense tracking, planning checklists, guest management, and RSVP tracking.
+
+The application also continues to use browser local storage to save planning information.
+
+## 6. Testing Plan
+
+The following tests will be used to evaluate the new features.
+
+| Feature | Expected Result |
+|---|---|
+| Add Vendor | Vendor appears in the vendor list |
+| Vendor Payment Status | Updated payment status is displayed |
+| Delete Vendor | Vendor is removed from the list |
+| Add Activity | Activity appears on the event schedule |
+| Activity Order | Activities appear in chronological order |
+| Delete Activity | Activity is removed from the schedule |
+| Dashboard | Vendor and schedule totals update correctly |
+| Previous Features | Budget, checklist, and RSVP functions continue working |
+
+## 7. Improvements from Week 6
+
+Week 6 focused on managing guests and tracking RSVP responses.
+
+Week 7 expands Planora by introducing vendor coordination and event scheduling. These additions help users manage both the people and services involved in organizing an event.
+
+The application is becoming more complete by bringing additional planning tools into one platform.
+
+## 8. Challenges and Future Improvements
+
+One challenge is making sure that the different features remain organized and easy to navigate as more tools are added.
+
+Another consideration is connecting vendor costs directly to the budget system. Currently, vendor management and expense tracking are separate functions, so future improvements could help prevent duplicate expense entries.
+
+Future versions may also include reminders, improved event organization, and additional testing.
+
+## 9. Next Steps
+
+For Week 8, I plan to focus on improving Planora's usability and adding features that make event planning more efficient.
+
+Possible improvements include:
+
+- Event reminders and notifications.
+- Improved navigation and interface design.
+- Additional testing and bug fixes.
+- Better connections between vendor costs and budget tracking.
+- Improved event planning organization.
+
+## 10. Version History
+
+| Version | Date | Description |
+|---|---|---|
+| 1.0 | September 10, 2026 | Initial project research, vision, and scope |
+| 2.0 | September 17, 2026 | Software requirements and user stories |
+| 3.0 | September 24, 2026 | Application interface designs and mockups |
+| 4.0 | October 1, 2026 | System architecture and database design |
+| 5.0 | October 8, 2026 | Interactive prototype with event creation, budgeting, and checklist |
+| 6.0 | October 15, 2026 | Guest management and RSVP tracking |
+| 7.0 | October 29, 2026 | Vendor management, event scheduling, and dashboard improvements |
+
+## 11. Week 7 Summary
+
+During Week 7, I expanded Planora by adding vendor management and event scheduling features. These improvements allow users to organize event services, track vendor payments, and create event timelines.
+
+Version 7.0 builds on the previous versions by making Planora a more useful and organized event-planning application. My next goal is to improve the user experience and continue developing features that make planning events easier.
