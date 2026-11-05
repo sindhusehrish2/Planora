@@ -1,0 +1,130 @@
+# Planora Project Documentation
+
+**Project:** Planora  
+**Company:** Planora Technologies  
+**Version:** 8.0  
+**Date:** November 5, 2026  
+**Prepared by:** Sehrish Sindhu
+
+# Week 8 – Event Reminders, Vendor Budget Integration, and Dashboard Improvements
+
+## 1. Week 8 Project Goal
+
+The goal for Week 8 is to improve Planora by adding event reminders, connecting vendor costs to budget tracking, and making the dashboard more useful. These updates build on the features developed in previous weeks and help users organize their events more efficiently.
+
+## 2. New Feature: Event Reminders
+
+In Version 8.0, I added an in-app reminder system that helps users keep track of upcoming deadlines and scheduled activities.
+
+The reminder system:
+
+- Displays incomplete tasks due within the next seven days.
+- Highlights overdue checklist tasks.
+- Shows upcoming scheduled activities.
+- Organizes reminders by date.
+- Updates when tasks or activities change.
+
+This feature helps users see which parts of their event planning need attention. Reminders appear inside the application rather than being sent through email or text messages.
+
+## 3. New Feature: Vendor Budget Integration
+
+Another improvement is connecting vendor estimates to the budget system.
+
+Users can now link an expense to a specific vendor when recording a payment or deposit.
+
+Planora calculates the total recorded expenses, remaining cash budget, unrecorded vendor costs, and projected available budget.
+
+For example, if a user has a $3,000 budget, hires a photographer for an estimated $800, and records a $200 deposit linked to that photographer, Planora will show:
+
+- Recorded expenses: $200
+- Remaining photographer estimate: $600
+- Remaining cash budget: $2,800
+- Projected available budget: $2,200
+
+This prevents the linked $200 deposit from being counted twice in the projected budget calculation.
+
+## 4. Dashboard Improvements
+
+The dashboard has been updated to provide a clearer overview of the event.
+
+It now includes:
+
+- Total event budget
+- Recorded spending
+- Remaining cash budget
+- Unrecorded vendor costs
+- Projected available budget
+- Guest RSVP statistics
+- Completed checklist tasks
+- Vendor information
+- Scheduled activities
+- Upcoming reminders
+
+These improvements make it easier to monitor event-planning progress in one location.
+
+## 5. Features Maintained from Previous Weeks
+
+Version 8.0 continues to include event creation, expense tracking, planning checklists, guest management, RSVP tracking, vendor management, and event scheduling.
+
+The application also continues to save information using browser local storage.
+
+## 6. Testing Plan
+
+| Feature | Expected Result |
+|---|---|
+| Create Event | Event information appears on dashboard |
+| Add Vendor | Vendor appears in vendor list |
+| Add Linked Expense | Expense is recorded and linked to vendor |
+| Budget Calculation | Recorded expenses and vendor commitments are not double-counted |
+| Add Task Deadline | Upcoming task appears in reminders |
+| Complete Task | Completed task disappears from reminders |
+| Add Scheduled Activity | Activity appears in schedule and upcoming reminders when applicable |
+| Update RSVP | Dashboard guest totals update |
+| Refresh Website | Saved information remains available in the same browser |
+
+## 7. Improvements from Week 7
+
+Week 7 focused on vendor management and event scheduling.
+
+Week 8 improves these features by connecting vendor estimates to expense tracking and using scheduled activities to generate upcoming reminders.
+
+These changes make Planora more connected and practical for event planning.
+
+## 8. Challenges and Limitations
+
+One challenge is preventing vendor costs from being counted twice when users record deposits or payments. To address this, the new system allows expenses to be linked directly to vendors.
+
+Expenses created in earlier versions are not automatically linked to vendors, so users must update those records manually by deleting and recreating them if necessary.
+
+Another limitation is that reminders only appear when users open or refresh Planora. The prototype does not currently send external notifications.
+
+## 9. Next Steps
+
+For Week 9, I plan to focus on testing and improving the application's overall usability.
+
+Potential improvements include:
+
+- Editing existing records.
+- Improving mobile responsiveness.
+- Testing accessibility.
+- Fixing errors identified during testing.
+- Improving navigation and organization.
+
+## 10. Version History
+
+| Version | Date | Description |
+|---|---|---|
+| 1.0 | September 10, 2026 | Initial project research and scope |
+| 2.0 | September 17, 2026 | Software requirements and user stories |
+| 3.0 | September 24, 2026 | Interface designs and mockups |
+| 4.0 | October 1, 2026 | System and data design |
+| 5.0 | October 8, 2026 | Event creation, budget tracking, and checklist prototype |
+| 6.0 | October 15, 2026 | Guest management and RSVP tracking |
+| 7.0 | October 29, 2026 | Vendor management and event scheduling |
+| 8.0 | November 5, 2026 | Event reminders, vendor budget integration, and dashboard improvements |
+
+## 11. Week 8 Summary
+
+During Week 8, I improved Planora by adding event reminders, connecting vendor estimates to the budget system, and expanding the dashboard.
+
+These updates make the application more organized and help users understand upcoming deadlines, recorded expenses, and future event costs. Version 8.0 builds on the previous versions by making Planora a more complete event-planning application..
