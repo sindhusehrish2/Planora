@@ -1,0 +1,141 @@
+# Planora Project Documentation
+
+Project: Planora  
+Company: Planora Technologies  
+Version: 9.0  
+Date: November 19, 2026  
+Prepared by: Sehrish Sindhu
+
+## Week 9 – Editing Features, Mobile Improvements, Validation, and Testing
+
+### 1. Week 9 Project Goal
+
+For Week 9, I focused on making Planora easier to use and improving the reliability of the interactive prototype. Instead of adding another major feature, I improved the tools developed during previous weeks.
+
+Version 9.0 introduces editing capabilities, mobile-friendly design improvements, stronger input validation, and confirmation messages before deleting information.
+
+### 2. Editing Existing Records
+
+I added Edit buttons to expenses, checklist tasks, guests, vendors, and scheduled activities.
+
+Users can now update existing information without deleting and recreating records. For example, they can change expense amounts, task deadlines, guest RSVP statuses, vendor costs, and event activity times.
+
+This makes Planora more convenient and flexible.
+
+### 3. Mobile and Interface Improvements
+
+I improved Planora's layout to make it easier to use on phones, tablets, and computers.
+
+The navigation buttons adjust to smaller screens, dashboard cards reorganize, and tables can scroll horizontally when necessary.
+
+I also maintained Planora's pink design to keep the application consistent and visually appealing.
+
+### 4. Input Validation and Error Prevention
+
+Version 9.0 includes additional checks to prevent users from entering incorrect information.
+
+These improvements include:
+
+- Requiring event names and dates.
+- Preventing negative budgets and vendor costs.
+- Requiring expense amounts greater than zero.
+- Checking that scheduled activities have valid start and end times.
+- Preventing blank names in required fields.
+
+These changes help improve the accuracy and reliability of the application.
+
+### 5. Delete Confirmations
+
+I added confirmation messages before users delete expenses, tasks, guests, vendors, or scheduled activities.
+
+This helps prevent users from accidentally removing important information.
+
+The application also displays confirmation messages when changes are successfully saved.
+
+### 6. Features Maintained from Previous Weeks
+
+Planora Version 9.0 continues to include:
+
+- Event creation and editing
+- Budget and expense tracking
+- Planning checklists
+- Guest management
+- RSVP tracking
+- Vendor management
+- Event scheduling
+- Upcoming reminders
+- Vendor budget integration
+- Dashboard progress tracking
+
+The application continues to save information locally in the browser.
+
+### 7. Week 9 Testing Plan
+
+To evaluate the improvements, I prepared tests for the following functions:
+
+1. Edit an expense and verify that the budget updates.
+2. Edit a guest's information and RSVP status.
+3. Change a vendor's estimated cost.
+4. Update a checklist deadline.
+5. Edit a scheduled activity.
+6. Enter an invalid amount and verify that the application prevents saving.
+7. Cancel a deletion and confirm that the information remains.
+8. Refresh the website and check that saved information is still available.
+9. Open Planora on a smaller screen and check the layout.
+
+The JavaScript was checked for syntax errors. The remaining browser tests will help identify any problems before the final version.
+
+### 8. Improvements from Week 8
+
+Week 8 focused on reminders, vendor budget integration, and dashboard improvements.
+
+Week 9 builds on these features by allowing users to edit existing records, improving mobile usability, and adding safeguards against incorrect information and accidental deletions.
+
+These improvements make Planora easier to navigate and more reliable.
+
+### 9. Current Limitations
+
+Planora is still a browser-based prototype. Information is stored locally rather than in an online database.
+
+Reminders appear inside the application and do not send automatic email or phone notifications.
+
+The current prototype also focuses on managing one active event at a time.
+
+### 10. Next Steps for Week 10
+
+For Week 10, I plan to focus on final testing and preparing Planora for its final presentation.
+
+My next steps include:
+
+- Testing all major features.
+- Fixing any remaining errors.
+- Reviewing the overall design.
+- Improving the user experience.
+- Preparing a final demonstration.
+- Summarizing the project's development from Week 1 through Week 10.
+
+### 11. Version History
+
+Version 1.0 – Project research, vision, and scope.
+
+Version 2.0 – Software requirements and user stories.
+
+Version 3.0 – Interface designs and mockups.
+
+Version 4.0 – System architecture and data design.
+
+Version 5.0 – Interactive prototype with event creation, budgeting, and checklist.
+
+Version 6.0 – Guest management and RSVP tracking.
+
+Version 7.0 – Vendor management and event scheduling.
+
+Version 8.0 – Event reminders, vendor budget integration, and dashboard improvements.
+
+Version 9.0 – Editing capabilities, mobile improvements, validation, and deletion confirmations.
+
+### 12. Week 9 Summary
+
+During Week 9, I focused on improving Planora's usability and reliability. I added editing capabilities, improved the mobile layout, introduced stronger input validation, and added deletion confirmations.
+
+These updates make the application easier to use and help prevent mistakes. Version 9.0 prepares Planora for final testing and presentation in Week 10.
